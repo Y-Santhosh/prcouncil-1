@@ -125,6 +125,7 @@ const Footer: React.FC = () => {
         <div className="text-center text-sm mt-6">
           <p>© {currentYear} Public Relations Council, IIIT Raichur. All rights reserved.</p>
         </div>
+                
       </footer>
     </div>
   );

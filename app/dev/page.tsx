@@ -87,13 +87,13 @@ export default function DevelopersPage() {
       </div>
       <div className="mt-12">
         <a
-          href="https://github.com/kvj-harsha/prcouncil"
+          href="https://github.com/iiitraichur/prcouncil"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-lime-400 to-green-500 text-black font-bold rounded-lg hover:from-green-500 hover:to-lime-600 transition-colors shadow-lg"
+          className="inline-flex items-center px-6 py-3 bg-lime-400 text-black font-bold rounded-lg hover:from-green-500 hover:to-lime-600 transition-colors shadow-lg"
         >
           <FaGithub className="mr-2 text-2xl" />
-          Check the Website GitHub
+          GitHub Repo!
         </a>
       </div>
     </div>

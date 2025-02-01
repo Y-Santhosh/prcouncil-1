@@ -53,7 +53,7 @@ const RequestDeletion: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-gray-900 to-gray-800 px-4"
+      className="min-h-screen flex items-center justify-center bg-black px-4"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}

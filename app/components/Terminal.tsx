@@ -2,7 +2,7 @@ import React from 'react'
 
 function Terminal() {
   return (
-    <div>
+    <div className="items-center content-center align-center text-center text-white">
       <div className="terminal-loader">
   <div className="terminal-header">
     <div className="terminal-title">Made by</div>

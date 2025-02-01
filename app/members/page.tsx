@@ -184,7 +184,7 @@ const TeamMemberCard: React.FC<TeamMember> = ({ name, role, photo, linkedin, ema
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1 }}
     className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-3xl shadow-xl p-6 flex flex-col items-center text-center min-h-[300px] min-w-[250px] transition-transform duration-300 hover:scale-[1.07] hover:shadow-[0_0_30px_6px_rgba(101,255,101,0.7)]"
-  >
+    >
     <img
       src={photo || "https://via.placeholder.com/150"}
       alt={name}
@@ -240,13 +240,13 @@ const Page: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="min-h-screen flex flex-col items-center bg-gradient-to-b from-black via-gray-900 to-gray-800 px-4 py-8"
+      className="min-h-screen flex flex-col items-center bg- blackx-4 py-8"
     >
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-4xl font-extrabold text-lime-400 mb-12"
+        className="text-4xl font-extrabold text-lime-400 mb-10"
       >
         Meet Our Team
       </motion.h1>

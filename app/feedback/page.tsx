@@ -60,11 +60,12 @@ const Feedback: React.FC = () => {
   };
 
   return (
+    <div>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-gray-900 to-gray-800 px-4"
+      className="min-h-screen flex items-center justify-center bg-black px-4"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -158,6 +159,20 @@ const Feedback: React.FC = () => {
         )}
       </motion.div>
     </motion.div>
+    <div className="flex items-center justify-center text-center ">
+
+  <motion.div initial="hidden" animate="visible" className="mt-10">
+    <button
+      aria-label="View Latest Events"
+      className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-gray-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 hover:text-white"
+    >
+      <a href="/dev">Contact Dev</a>
+    </button>
+  </motion.div>
+
+</div>
+
+    </div>
   );
 };
 
