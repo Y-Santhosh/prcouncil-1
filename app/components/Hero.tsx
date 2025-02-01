@@ -55,6 +55,7 @@ const Hero: React.FC = () => {
             </button>
           </motion.div>
         </main>
+        
       </div>
 
       <div className="relative z-10 mt-1 w-full px-6 flex flex-col justify-center items-center bg-black text-center py-20" id="events">
@@ -62,7 +63,7 @@ const Hero: React.FC = () => {
           Latest Events
         </motion.h3>
         {loading ? (
-          <p className="text-gray-400">Loading events...</p>
+          <p className="p-10 text-gray-400 text-lg animate-pulse">🚀 Hang on tight... fetching the latest events!</p>
         ) : memoizedEvents.length === 0 ? (
           <motion.div variants={fadeInUp} initial="hidden" animate="visible" className="text-gray-400 mt-12">
             No events found. Try adjusting your filters.
