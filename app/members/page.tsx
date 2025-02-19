@@ -182,7 +182,7 @@ export default function TeammembersPage() {
         <h1 className="text-5xl font-extrabold text-[#A6FF4D] tracking-tight drop-shadow-lg mb-8">
           Meet the Team
         </h1>
-        {Object.entries(developers).map(([category, members]) => (
+        {Object.entries(teammembers).map(([category, members]) => (
           <div key={category} className="mb-12 w-full max-w-4xl">
             <h2 className="text-3xl font-bold text-[#A6FF4D] text-center pb-2 mb-6">{category}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
