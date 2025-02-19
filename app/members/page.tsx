@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-const developers = {
+const teammembers = {
   'Overall lead': [
     {
       name: 'Ashutosh Govind Singh',
@@ -170,7 +170,7 @@ const developers = {
   ],
 };
 
-export default function DevelopersPage() {
+export default function TeammembersPage() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-8">
       <motion.div
