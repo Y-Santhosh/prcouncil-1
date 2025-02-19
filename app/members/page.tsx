@@ -4,15 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-type TeamMember = {
-  name: string;
-  role: string;
-  photo: string;
-  linkedin: string;
-  email: string;
-};
-
-const teams = {
+const developers = {
   'Overall lead': [
     {
       name: 'Ashutosh Govind Singh',
@@ -178,83 +170,51 @@ const teams = {
   ],
 };
 
-const TeamMemberCard: React.FC<TeamMember> = ({ name, role, photo, linkedin, email }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-    className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-3xl shadow-xl p-6 flex flex-col items-center text-center min-h-[300px] min-w-[250px] transition-transform duration-300 hover:scale-[1.07] hover:shadow-[0_0_30px_6px_rgba(101,255,101,0.7)]"
-    >
-    <img
-      src={photo || "https://via.placeholder.com/150"}
-      alt={name}
-      className="w-32 h-32 rounded-full border-4 border-lime-400 mb-4"
-    />
-    <h2 className="text-xl font-bold text-white">{name}</h2>
-    <p className="text-lime-400 text-sm font-semibold whitespace-nowrap overflow-hidden text-ellipsis">
-      {role}
-    </p>
-    <div className="flex space-x-4 mt-4">
-      <a
-        href={linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-lime-400 hover:text-lime-500 transition-transform transform hover:scale-110 text-2xl"
-        aria-label={`LinkedIn profile of ${name}`}
-      > 
-        <FaLinkedin />
-      </a>
-      <a
-        href={`mailto:${email}`}
-        className="text-lime-400 hover:text-lime-500 transition-transform transform hover:scale-110 text-2xl"
-        aria-label={`Email ${name}`}
-      >
-        <FaEnvelope />
-      </a>
-    </div>
-  </motion.div>
-);
-
-
-const TeamSection: React.FC<{ title: string; team: TeamMember[] }> = ({ title, team }) => (
-  <>
-    <motion.h2
-      initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className="text-4xl font-extrabold text-lime-400 mt-16 mb-12"
-    >
-      {title}
-    </motion.h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {team.map((member, index) => (
-        <TeamMemberCard key={index} {...member} />
-      ))}
-    </div>
-  </>
-);
-
-const Page: React.FC = () => {
+export default function DevelopersPage() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, ease: "easeInOut" }}
-      className="min-h-screen flex flex-col items-center bg- blackx-4 py-8"
-    >
-      <motion.h1
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-4xl font-extrabold text-lime-400 mb-10"
+    <div className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-8">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="flex flex-col items-center"
       >
-        Meet Our Team
-      </motion.h1>
-      {Object.entries(teams).map(([key, members]) => (
-        <TeamSection key={key} title={key.replace(/([a-z])([A-Z])/g, "$1 $2")} team={members} />
-      ))}
-    </motion.div>
+        <h1 className="text-5xl font-extrabold text-[#A6FF4D] tracking-tight drop-shadow-lg mb-8">
+          Meet the Team
+        </h1>
+        {Object.entries(developers).map(([category, members]) => (
+          <div key={category} className="mb-12 w-full max-w-4xl">
+            <h2 className="text-3xl font-bold text-[#A6FF4D] text-center pb-2 mb-6">{category}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {members.map((member, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: index * 0.1 }}
+                  className="bg-gray-900 p-6 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105 hover:border hover:border-[#A6FF4D]"
+                >
+                  <img
+                    src={member.photo}
+                    alt={`${member.name}'s profile`}
+                    className="w-32 h-32 rounded-full mx-auto mb-4 border-[4px] border-[#A6FF4D]"
+                  />
+                  <h3 className="text-2xl font-bold text-center mb-2">{member.name}</h3>
+                  <p className="text-center text-gray-400 mb-2">{member.role}</p>
+                  <div className="flex justify-center space-x-6 mt-4">
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-[#A6FF4D] transition-transform duration-200">
+                      <FaLinkedin />
+                    </a>
+                    <a href={member.email} className="text-3xl hover:text-[#A6FF4D] transition-transform duration-200">
+                      <FaEnvelope />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
-};
-
-export default Page;
+}
