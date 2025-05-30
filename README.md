@@ -9,6 +9,9 @@ Welcome to the **Public Relations Council** website for **IIIT Raichur**! This p
 🔗 [Visit PR Council Website](https://prciiitr.vercel.app)  
 
 ---
+![diagram (4)](https://github.com/user-attachments/assets/de47959a-451f-43b8-9f05-2fff24e34ef2)
+---
+
 
 ## 🚀 **Tech Stack** 💻  
 
